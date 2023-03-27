@@ -1,2 +1,2 @@
-export { nearWalletExists } from './nearWalletExists';
-export { NearRPC } from './../types/nearRPC';
+export { getCryptoPrice } from "./cryptoPrice";
+export { ChainSymbols } from "./../types/symbols";
