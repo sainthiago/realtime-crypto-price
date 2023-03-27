@@ -11,7 +11,7 @@ Fetchs the price of crypto in USDT from Binance API.
 
 ## Live Demo
 
-https://codesandbox.io/s/realtime-crypto-price-example-3r2lyo
+https://codesandbox.io/s/realtime-crypto-price-eij1g8
 
 ## Example
 
@@ -21,10 +21,10 @@ import { ChainSymbols, getCryptoPrice } from "realtime-crypto-price";
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const [nearPrice, setNearPrice] = useState(false);
+  const [nearPrice, setNearPrice] = useState("0");
   const getNearPrice = async () => {
     const res = await getCryptoPrice(ChainSymbols.NEAR);
-    setNearPrice(res);
+    setNearPrice(res?.price || "0");
   };
 
   useEffect(() => {
