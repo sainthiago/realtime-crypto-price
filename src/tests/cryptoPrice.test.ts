@@ -1,14 +1,27 @@
-import fetchMock from "fetch-mock";
 import { getCryptoPrice, ChainSymbols } from "./../index";
 
 describe("getCryptoPrice", () => {
-  it("returns data", async () => {
-    const { price } = await getCryptoPrice(ChainSymbols.NEAR);
-    expect(price).toBeDefined();
+  jest.spyOn(console, "error").mockImplementation(() => null);
+  test("returns price", async () => {
+    const mockFetch = Promise.resolve({
+      json: () => Promise.resolve({ price: "1490000" }),
+    });
+
+    global.fetch = jest.fn().mockImplementation(() => mockFetch);
+
+    const priceData = await getCryptoPrice(ChainSymbols.NEAR);
+
+    expect(priceData?.price).toEqual("1490000");
   });
 
-  it("returns errors", async () => {
-    const { error } = await getCryptoPrice(ChainSymbols.NEAR);
-    expect(error).toBeDefined();
+  test("returns error", async () => {
+    const mockFetch = Promise.resolve({
+      json: () => Promise.resolve({ error: "Error fetching price." }),
+    });
+    global.fetch = jest.fn().mockImplementation(() => mockFetch);
+
+    const priceData = await getCryptoPrice(ChainSymbols.NEAR);
+
+    expect(priceData).toEqual({ error: "Error fetching price." });
   });
 });

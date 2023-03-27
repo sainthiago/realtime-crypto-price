@@ -14,7 +14,7 @@ export const getCryptoPrice = async (
     if (response?.error) {
       return priceError;
     }
-    return response.price;
+    return { price: response.price };
   } catch (error) {
     return priceError;
   }

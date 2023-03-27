@@ -1,7 +1,7 @@
 {
-  "name": "near-wallet-validator",
-  "version": "1.0.6",
-  "description": "checks if a near wallet exists.",
+  "name": "realtime-crypto-price",
+  "version": "0.0.1",
+  "description": "Fetchs the price of crypto in USDT from Binance API.",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "scripts": {
@@ -18,9 +18,13 @@
     "lib/**/*"
   ],
   "keywords": [
-    "near",
-    "wallet",
     "crypto",
+    "price",
+    "crypto-price",
+    "realtime",
+    "realtime-crypto-price",
+    "binance",
+    "binance-api",
     "typescript",
     "web3.0",
     "library",
@@ -30,7 +34,7 @@
   "author": "Rui Santiago",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sainthiago/near-wallet-validator"
+    "url": "git+https://github.com/sainthiago/realtime-crypto-price"
   },
   "license": "MIT",
   "devDependencies": {
