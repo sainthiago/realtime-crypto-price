@@ -1,6 +1,6 @@
 {
   "name": "realtime-crypto-price",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fetchs the price of crypto in USDT from Binance API.",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
